@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flower Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #fff4e8;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #856e65;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 columns */
+    grid-gap: 20px; /* spacing between items */
+    justify-content: center;
+    margin: 20px auto;
+   padding-left: 30px;
+}
+
+.gallery-item {
+    position: relative;
+    width: 250px;
+    height: 220px;
+    perspective: 1000px;
+    border-style: groove;
+    border-color: black;
+}
+
+
+
+.gallery-item > div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transition: transform 0.5s;
+}
+
+.gallery-item:hover > .front {
+    transform: rotateY(180deg);
+}
+
+.gallery-item:hover > .back {
+    transform: rotateY(0deg);
+}
+
+.front {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.front img {
+    /* max-width: 100%;
+    max-height: 100%; */
+
+    width: 250px;
+    height: 220px;
+}
+
+.back {
+    transform: rotateY(180deg);
+    background-color: #856e65;
+    color: white;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.info p {
+    margin-bottom: 10px;
+}
+
+.info a {
+    color: #ffcf8c;
+    text-decoration: none;
+}
+
+.info a:hover {
+    text-decoration: underline;
+}
+
+.gallery-description {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+footer {
+    background-color: #856e65;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Flora Gallery</h1>
+        <h2>Welcome to my gallery! Here we are exploring different types of flowers on Earth. Hover over an image to know more!</h2>
+    </header>
+    <div class="gallery">
+        <!-- Rose -->
+        <div class="gallery-item">
+            <div class="front">
+                <img src="https://static.vecteezy.com/system/resources/previews/022/267/874/large_2x/rose-flower-pictures-beautiful-roses-love-rose-flower-beautiful-flowers-wallpapers-ai-generated-free-photo.jpg" alt="Rose">
+            </div>
+            <div class="back">
+                <div class="info">
+                    <p>Rose</p>
+                    <p><em>Roses are one of the most popular and recognizable flowers, known for their beauty and fragrance.</em></p>
+                    <a href="https://www.proflowers.com/blog/history-and-meaning-of-pink-roses">More info</a>
+                </div>
+            </div>
+        </div>
+        <!-- Tulips -->
+        <div class="gallery-item">
+            <div class="front">
+                <img src="https://th.bing.com/th/id/R.a506a4e0e635583714f04cdb5b6b88af?rik=Q7RVyeSPCUKOzw&riu=http%3a%2f%2fwww.pixelstalk.net%2fwp-content%2fuploads%2f2014%2f12%2fPink-Tulip-flowers-images-and-wallpapers.jpg&ehk=m%2fMBV0tMj4aYpuosvkGRASBMScavaiq%2f3qNkAgPqLDs%3d&risl=&pid=ImgRaw&r=0" alt="Tulips">
+            </div>
+            <div class="back">
+                <div class="info">
+                    <p>Tulips</p>
+                    <p><em>Tulips are known for their large, brightly colored, cup-shaped flowers and are widely cultivated for ornamental purposes in gardens and as cut flowers.</em></p>
+                    <a href="https://en.wikipedia.org/wiki/Tulip">More info</a>
+                </div>
+            </div>
+        </div>
+        <!-- Daisys -->
+        <div class="gallery-item">
+            <div class="front">
+                <img src="https://cdn2.stylecraze.com/wp-content/uploads/2013/11/Top-25-Most-Beautiful-Daisy-Flowers.jpg" alt="Daisys">
+            </div>
+            <div class="back">
+                <div class="info">
+                    <p>Daisys</p>
+                    <p><em>Daisies belong to the Asteraceae family and are characterized by their simple, white petals surrounding a yellow center, symbolizing innocence and purity.</em></p>
+                    <a href="https://leafyplace.com/types-of-daisies/#:~:text=Daisies%20are%20a%20type%20of%20flowering,to%20their%20star-shape%20and%20elegant%20petals.&text=Daisies%20are%20a%20type,star-shape%20and%20elegant%20petals.&text=a%20type%20of%20flowering,to%20their%20star-shape%20and">More info</a>
+                </div>
+            </div>
+        </div>
+        <!-- Dahlias -->
+        <div class="gallery-item">
+            <div class="front">
+                <img src="https://live.staticflickr.com/3289/2998166320_5361a4abb3.jpg" alt="Dahlias">
+            </div>
+            <div class="back">
+                <div class="info">
+                    <p>Dahlias</p>
+                    <p><em>Dahlias, native to Mexico, are known for their vibrant colors, diverse flower shapes, and long blooming season, making them popular garden flowers worldwide.</em></p>
+                    <a href="https://www.almanac.com/plant/dahlias">More info</a>
+                </div>
+            </div>
+        </div>
+        <!--Sunflowers-->
+        <div class="gallery-item">
+            <div class="front">
+                <img src="https://w0.peakpx.com/wallpaper/474/195/HD-wallpaper-sunflowers-flower-nature.jpg" alt="Sunflower">
+            </div>
+            <div class="back">
+                <div class="info">
+                    <p>Sunflowers</p>
+                    <p><em>Sunflowers or Helianthus, are iconic plants known for their large, bright yellow flowers that follow the movement of the sun and are often associated with warmth, happiness, and positivity.</em></p>
+                    <a href="https://en.wikipedia.org/wiki/Helianthus">More info</a>
+                </div>
+            </div>
+        </div>
+        <!--Lavender-->
+        <div class="gallery-item">
+            <div class="front">
+                <img src="https://www.publicdomainpictures.net/pictures/460000/nahled/lavendel-blumen-bluten-wildblumen.jpg" alt="Lavender">
+            </div>
+            <div class="back">
+                <div class="info">
+                    <p>Lavender</p>
+                    <p><em>Lavender is a fragrant herb known for its calming aroma and purple flowers, commonly used in aromatherapy, culinary dishes, and skincare products.</em></p>
+                    <a href="https://www.almanac.com/plant/lavender">More info</a>
+                </div>
+            </div>
+        </div>
+        <!--Orchid-->
+        <div class="gallery-item">
+            <div class="front">
+                <img src="https://wallpaperaccess.com/full/7346348.jpg" alt="Orchid">
+            </div>
+            <div class="back">
+                <div class="info">
+                    <p>Orchid</p>
+                    <p><em>Orchids are elegant flowering plants known for their diverse shapes, vibrant colors, and delicate beauty, representing luxury, love, and refinement.</em></p>
+                    <a href="https://en.wikipedia.org/wiki/Orchid">More info</a>
+                </div>
+            </div>
+        </div>
+        <!--Peony-->
+        <div class="gallery-item">
+            <div class="front">
+                <img src="https://cdn.shopify.com/s/files/1/1902/7917/products/PeonyCoralCharm.jpg?v=1657471531" alt="Peony">
+            </div>
+            <div class="back">
+                <div class="info">
+                    <p>Peony</p>
+                    <p><em>Peonies are lush, fragrant flowers with large, ruffled petals, symbolizing romance, prosperity, and good fortune.</em></p>
+                    <a href="https://www.almanac.com/plant/peonies">More info</a>
+                </div>
+            </div>
+        </div>
+         <!--Jasmine-->
+        <div class="gallery-item">
+            <div class="front">
+                <img src="https://img.freepik.com/premium-photo/jasmine-flower_252085-33457.jpg" alt="Jasmine">
+            </div>
+            <div class="back">
+                <div class="info">
+                    <p>Jasmine</p>
+                    <p><em>Jasmine is a fragrant flowering plant prized for its sweet aroma and delicate white flowers, often used in perfumery, tea, and traditional medicine for its calming and soothing properties.</em></p>
+                    <a href="https://en.wikipedia.org/wiki/Jasmine">More info</a>
+                </div>
+            </div>
+        </div>
+        <!--Hibiscus-->
+        <div class="gallery-item">
+            <div class="front">
+                <img src="https://www.publicdomainpictures.net/pictures/520000/velka/pink-hibiscus-flower-16882080315Pe.jpg" alt="Hibiscus">
+            </div>
+            <div class="back">
+                <div class="info">
+                    <p>Hibiscus</p>
+                    <p><em>Hibiscus is a vibrant flowering plant known for its large, colorful blossoms and is often used in landscaping, herbal teas, and skincare products for its beauty and medicinal properties.</em></p>
+                    <a href="https://www.thespruce.com/hibiscus-growing-guide-5192541">More info</a>
+                </div>
+            </div>
+        </div>
+        <!--Cherry Blossom-->
+        <div class="gallery-item">
+            <div class="front">
+                <img src="https://hips.hearstapps.com/hmg-prod/images/cherry-blossom-tree-6424089e5d210.jpg" alt="Cherry Blossom">
+            </div>
+            <div class="back">
+                <div class="info">
+                    <p>Cherry Blossom</p>
+                    <p><em>Cherry blossoms, also known as sakura, are delicate pink or white flowers that bloom in spring, symbolizing renewal, beauty, and the fleeting nature of life in Japanese culture.</em></p>
+                    <a href="https://en.wikipedia.org/wiki/Cherry_blossom">More info</a>
+                </div>
+            </div>
+        </div>
+        <!--Lotus-->
+        <div class="gallery-item">
+            <div class="front">
+                <img src="https://images.unsplash.com/photo-1616435577207-ca90abc6b732?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bG90dXN8ZW58MHx8MHx8fDA%3D" alt="Lotus">
+            </div>
+            <div class="back">
+                <div class="info">
+                    <p>Lotus</p>
+                    <p><em>Lotus is an aquatic plant revered for its serene beauty, with elegant flowers emerging from the water symbolizing purity, enlightenment, and spiritual growth in various cultures.</em></p>
+                    <a href="https://www.flowerglossary.com/lotus-flowers-meaning/">More info</a>
+                </div>
+            </div>
+        </div>
+        <!--Magnolia-->
+        <div class="gallery-item">
+            <div class="front">
+                <img src="https://gardenerspath.com/wp-content/uploads/2023/04/Best-Magnolia-Varieties-Feature.jpg" alt="Magnolia">
+            </div>
+            <div class="back">
+                <div class="info">
+                    <p>Magnolia</p>
+                    <p><em>Magnolia is a graceful flowering tree or shrub known for its large, fragrant blossoms and glossy foliage, symbolizing beauty, dignity, and perseverance in adversity.</em></p>
+                    <a href="https://www.almanac.com/plant/magnolia">More info</a>
+                </div>
+            </div>
+        </div>
+        <!--Gardenia-->
+        <div class="gallery-item">
+            <div class="front">
+                <img src="https://content.api.news/v3/images/bin/afbbacc14d0f7ad249afbd086cfd5411" alt="Gardenia">
+            </div>
+            <div class="back">
+                <div class="info">
+                    <p>Gardenia</p>
+                    <p><em>Gardenia is a fragrant flowering shrub with creamy-white blossoms and glossy green leaves, prized for its intoxicating scent and used in perfumery and ornamental gardening.</em></p>
+                    <a href="https://www.gardenia.net/guide/learn-how-to-grow-and-care-for-your-gardenia">More info</a>
+                </div>
+            </div>
+        </div>
+        <!--Queen Anne's Lace-->
+        <div class="gallery-item">
+            <div class="front">
+                <img src="https://live.staticflickr.com/2443/3804847869_3498b98340_b.jpg" alt="Queen Anne's Lace">
+            </div>
+            <div class="back">
+                <div class="info">
+                    <p>Queen Anne's Lace</p>
+                    <p><em>Queen Anne's Lace, also known as wild carrot, is a delicate and lacy white flower with a dark center, symbolizing sanctuary and protection, often found along roadsides and in fields.</em></p>
+                    <a href="https://en.wikipedia.org/wiki/Daucus_carota">More info</a>
+                </div>
+            </div>
+        </div>
+        <!--Cosmos-->
+        <div class="gallery-item">
+            <div class="front">
+                <img src="https://www.gardendesign.com/pictures/images/900x705Max/site_3/candy-stripe-cosmos-cosmos-bipinnatus-pink-cosmos-flower-garden-design_17778.jpg" alt="Cosmos">
+            </div>
+            <div class="back">
+                <div class="info">
+                    <p>Cosmos</p>
+                    <p><em>Cosmos flowers are dainty, colorful blooms with delicate petals and fern-like foliage, bringing a whimsical charm to gardens and attracting pollinators with their nectar-rich blooms.</em></p>
+                    <a href="https://www.petalrepublic.com/types-of-cosmos-flowers/">More info</a>
+                </div>
+            </div>
+        </div>
+        <!--Delphinium-->
+        <div class="gallery-item">
+            <div class="front">
+                <img src="https://www.thespruce.com/thmb/2QCxDTUQSR6GvbQ21fyKTjcqMI0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/delphinium-care-guide-7105084_08-72e371a9c1e7485b95e8824cf185a4eb.jpg" alt="Delphinium">
+            </div>
+            <div class="back">
+                <div class="info">
+                    <p>Delphinium</p>
+                    <p><em>Delphiniums are tall, majestic flowers with vibrant spikes of blue, purple, pink, or white blooms, adding vertical interest and a splash of color to garden borders and floral arrangements.</em></p>
+                    <a href="https://www.thespruce.com/thmb/2QCxDTUQSR6GvbQ21fyKTjcqMI0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/delphinium-care-guide-7105084_08-72e371a9c1e7485b95e8824cf185a4eb.jpg">More info</a>
+                </div>
+            </div>
+        </div>
+        <!--Camellia-->
+        <div class="gallery-item">
+            <div class="front">
+                <img src="https://thursd.com/storage/media/52710/Camellia-flowers-as-ornamental-decor.jpg" alt="Camellia">
+            </div>
+            <div class="back">
+                <div class="info">
+                    <p>Camellia</p>
+                    <p><em>Camellias are elegant evergreen shrubs or trees with glossy leaves and exquisite flowers in shades of pink, red, or white, revered for their beauty and used in traditional tea culture and ornamental gardens.</em></p>
+                    <a href="https://www.bing.com/ck/a?!&&p=b21243a26d65829bJmltdHM9MTcxNjk0MDgwMCZpZ3VpZD0wZTNmNzVmMi02ZWEwLTZjY2YtMWQ3OC02NjhjNmY3NDZkNzEmaW5zaWQ9NTU4MQ&ptn=3&ver=2&hsh=3&fclid=0e3f75f2-6ea0-6ccf-1d78-668c6f746d71&psq=Camellia&u=a1aHR0cHM6Ly93d3cudGhlc3BydWNlLmNvbS9jYW1lbGxpYS1mbG93ZXJzLTEzMTYwMjE&ntb=1">More info</a>
+                </div>
+            </div>
+        </div>
+        <!--Ranunculus-->
+        <div class="gallery-item">
+            <div class="front">
+                <img src="https://i.pinimg.com/originals/5b/76/35/5b7635ad1c2ca3518b78c76c4774d489.jpg" alt="Ranunculus">
+            </div>
+            <div class="back">
+                <div class="info">
+                    <p>Ranunculus</p>
+                    <p><em>Ranunculus are delicate, rose-like flowers with layers of paper-thin petals in vibrant colors, adding a touch of romance and elegance to bouquets and garden beds.</em></p>
+                    <a href="https://www.bing.com/ck/a?!&&p=3ad1a05f41880784JmltdHM9MTcxNjk0MDgwMCZpZ3VpZD0wZTNmNzVmMi02ZWEwLTZjY2YtMWQ3OC02NjhjNmY3NDZkNzEmaW5zaWQ9NjY2Nw&ptn=3&ver=2&hsh=3&fclid=0e3f75f2-6ea0-6ccf-1d78-668c6f746d71&psq=ranunculus&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvUmFudW5jdWx1cw&ntb=1">More info</a>
+                </div>
+            </div>
+        </div>
+        <!--Protea-->
+        <div class="gallery-item">
+            <div class="front">
+                <img src="https://th.bing.com/th/id/R.5aead7fbbb24872bd55f3ad094385a3f?rik=g01yAflhQZ4kjA&pid=ImgRaw&r=0" alt="Protea">
+            </div>
+            <div class="back">
+                <div class="info">
+                    <p>Protea</p>
+                    <p><em>Proteas are striking and unique flowers native to South Africa, characterized by their large, showy blooms and bold, architectural shapes, symbolizing diversity, courage, and transformation.</em></p>
+                    <a href="https://www.bing.com/ck/a?!&&p=6996887ddd8cb5e9JmltdHM9MTcxNjk0MDgwMCZpZ3VpZD0wZTNmNzVmMi02ZWEwLTZjY2YtMWQ3OC02NjhjNmY3NDZkNzEmaW5zaWQ9NTU1Mw&ptn=3&ver=2&hsh=3&fclid=0e3f75f2-6ea0-6ccf-1d78-668c6f746d71&psq=Protea&u=a1aHR0cHM6Ly93d3cudGhlc3BydWNlLmNvbS9wcm90ZWEtcGxhbnRzLWdyb3dpbmctZ3VpZGUtNTIwNTgyMg&ntb=1">More info</a>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <footer>
+        <p>&copy; 2024 Flora Gallery. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
